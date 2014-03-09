@@ -1,4 +1,4 @@
 MistFlat
 ========
 
-iOS Client of Mist
+iOS Client of Mist (incompleted).
