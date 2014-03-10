@@ -76,6 +76,7 @@
 		2CA6D35E18C5CE9D003CDD32 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6D35D18C5CE9D003CDD32 /* FeedCell.m */; };
 		2CAFFC0718CB781A00CBF8CB /* AddDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAFFC0618CB781A00CBF8CB /* AddDeviceController.m */; };
 		2CAFFC0B18CB7FCC00CBF8CB /* qrcode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CAFFC0A18CB7FCC00CBF8CB /* qrcode.jpg */; };
+		2CB8931118CD9932001A3F78 /* shadowImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8931018CD9932001A3F78 /* shadowImage.png */; };
 		2CFD1F8D18CC0FFA00B82078 /* fan-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFD1F8418CC0FFA00B82078 /* fan-128.png */; };
 		2CFD1F8E18CC0FFA00B82078 /* fridge-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFD1F8518CC0FFA00B82078 /* fridge-128.png */; };
 		2CFD1F8F18CC0FFA00B82078 /* greentech-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFD1F8618CC0FFA00B82078 /* greentech-128.png */; };
@@ -192,6 +193,7 @@
 		2CAFFC0518CB781A00CBF8CB /* AddDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDeviceController.h; sourceTree = "<group>"; };
 		2CAFFC0618CB781A00CBF8CB /* AddDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDeviceController.m; sourceTree = "<group>"; };
 		2CAFFC0A18CB7FCC00CBF8CB /* qrcode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qrcode.jpg; sourceTree = "<group>"; };
+		2CB8931018CD9932001A3F78 /* shadowImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadowImage.png; sourceTree = "<group>"; };
 		2CFD1F8418CC0FFA00B82078 /* fan-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fan-128.png"; sourceTree = "<group>"; };
 		2CFD1F8518CC0FFA00B82078 /* fridge-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fridge-128.png"; sourceTree = "<group>"; };
 		2CFD1F8618CC0FFA00B82078 /* greentech-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greentech-128.png"; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 		2CA6D30618C57AE7003CDD32 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CB8931018CD9932001A3F78 /* shadowImage.png */,
 				2CFD1F8318CC0FFA00B82078 /* ICONs */,
 				2CAFFC0A18CB7FCC00CBF8CB /* qrcode.jpg */,
 				2C59A4D718C82F5100CFC5C7 /* Default-Portrait.png */,
@@ -565,6 +568,7 @@
 			files = (
 				2CA6D33118C57AE7003CDD32 /* compose.png in Resources */,
 				2CA6D33E18C57AE7003CDD32 /* menu@2x.png in Resources */,
+				2CB8931118CD9932001A3F78 /* shadowImage.png in Resources */,
 				2CA6D33018C57AE7003CDD32 /* comment@2x.png in Resources */,
 				2CA6D34318C57AE7003CDD32 /* running.jpg in Resources */,
 				2CFD1F9118CC0FFA00B82078 /* home-128.png in Resources */,

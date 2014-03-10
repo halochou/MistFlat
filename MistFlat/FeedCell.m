@@ -40,7 +40,7 @@
     UIColor* lightColor = [UIColor colorWithWhite:0.7 alpha:1.0];
     
     NSString* fontName = @"Avenir-Book";
-    NSString* boldItalicFontName = @"Avenir-BlackOblique";
+    NSString* boldItalicFontName = @"Avenir-Book";
     NSString* boldFontName = @"Avenir-Black";
     
     self.nameLabel.textColor =  mainColor;

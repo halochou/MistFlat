@@ -635,10 +635,11 @@
             <objects>
                 <navigationController storyboardIdentifier="feedNavViewController" automaticallyAdjustsScrollViewInsets="NO" id="KYh-a2-OYz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="UE2-N7-bqT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UE2-N7-bqT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.10980392156862745" green="0.61960784313725492" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

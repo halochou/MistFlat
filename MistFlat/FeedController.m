@@ -43,7 +43,7 @@
     self.feedTableView.backgroundColor = [UIColor whiteColor];
     self.feedTableView.separatorColor = [UIColor colorWithWhite:0.9 alpha:0.6];
     
-    self.profileImages = [NSArray arrayWithObjects:@"hdtv-128", @"fridge-128", @"fan-128", @"lamp-128", nil];
+    self.profileImages = [NSArray arrayWithObjects:@"profile-1.jpg", @"profile-2.jpg", @"profile-3.jpg", @"profile.jpg", nil];
     self.devices = @[@"电视",@"冰箱",@"空调",@"灯"];
     
 }
@@ -124,13 +124,13 @@
     
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
-    UIColor* mainColor = [UIColor colorWithRed:28.0/255 green:158.0/255 blue:121.0/255 alpha:1.0f];
+    //UIColor* mainColor = [UIColor colorWithRed:28.0/255 green:158.0/255 blue:121.0/255 alpha:1.0f];
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
-    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"shadowImage"] forBarMetrics:UIBarMetricsDefault];
+    //self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    //self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
 }
 
 
