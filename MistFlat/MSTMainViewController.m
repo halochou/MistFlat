@@ -8,6 +8,7 @@
 
 #import "MSTMainViewController.h"
 #import "CredentialStore.h"
+#import "AuthAPIClient.h"
 #import "LoginController.h"
 
 @interface MSTMainViewController ()
@@ -38,11 +39,10 @@
 {
     [super viewDidAppear:animated];
     // Verify if logined.
-    if([self.store isLoggedIn]){
+    if([self.store isLoggedIn] /*&& ![[AuthAPIClient sharedClient] isAccessTokenExpired]*/){
         [self performSegueWithIdentifier:@"showSidePanelView" sender:self];
-    } else {
-        [self performSegueWithIdentifier:@"showLoginView" sender:self];
     }
+    [self performSegueWithIdentifier:@"showLoginView" sender:self];
 }
 
 - (void)didReceiveMemoryWarning

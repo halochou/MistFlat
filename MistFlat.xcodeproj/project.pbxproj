@@ -25,6 +25,8 @@
 		2C59A4D218C81D6600CFC5C7 /* lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C59A4D118C81D6600CFC5C7 /* lock@2x.png */; };
 		2C59A4D418C81D7500CFC5C7 /* mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C59A4D318C81D7500CFC5C7 /* mail@2x.png */; };
 		2C59A4D818C82F5100CFC5C7 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C59A4D718C82F5100CFC5C7 /* Default-Portrait.png */; };
+		2C75BC4918D13B4700B08836 /* ProfileController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C75BC4818D13B4700B08836 /* ProfileController2.m */; };
+		2C75BC4C18D1462900B08836 /* MSTAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C75BC4B18D1462900B08836 /* MSTAccount.m */; };
 		2CA6D2C118C5785E003CDD32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA6D2C018C5785E003CDD32 /* Foundation.framework */; };
 		2CA6D2C318C5785E003CDD32 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA6D2C218C5785E003CDD32 /* CoreGraphics.framework */; };
 		2CA6D2C518C5785E003CDD32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA6D2C418C5785E003CDD32 /* UIKit.framework */; };
@@ -75,7 +77,6 @@
 		2CA6D35E18C5CE9D003CDD32 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6D35D18C5CE9D003CDD32 /* FeedCell.m */; };
 		2CAFFC0718CB781A00CBF8CB /* AddDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAFFC0618CB781A00CBF8CB /* AddDeviceController.m */; };
 		2CAFFC0B18CB7FCC00CBF8CB /* qrcode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CAFFC0A18CB7FCC00CBF8CB /* qrcode.jpg */; };
-		2CB8931C18CDAD0F001A3F78 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8931B18CDAD0F001A3F78 /* MyTableViewController.m */; };
 		2CB8931F18CDBC5F001A3F78 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8931E18CDBC5F001A3F78 /* InitViewController.m */; };
 		2CB8932118CDBE55001A3F78 /* wifi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8932018CDBE55001A3F78 /* wifi@2x.png */; };
 		2CB8932618CDC28C001A3F78 /* tv.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8932218CDC28C001A3F78 /* tv.jpg */; };
@@ -84,7 +85,13 @@
 		2CB8932918CDC28C001A3F78 /* air.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8932518CDC28C001A3F78 /* air.jpg */; };
 		2CB8932B18CDCABA001A3F78 /* iphone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8932A18CDCABA001A3F78 /* iphone.jpg */; };
 		2CB8932D18CDCB1B001A3F78 /* ipad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8932C18CDCB1B001A3F78 /* ipad.jpg */; };
+		2CC0BE7B18CEAFEA00CCD286 /* MSTPlugPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0BE7A18CEAFEA00CCD286 /* MSTPlugPanel.m */; };
+		2CC0BE7E18CEB0B400CCD286 /* MSTPlugSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0BE7D18CEB0B400CCD286 /* MSTPlugSocket.m */; };
+		2CC0BE8118CEB1D900CCD286 /* MSTPlugPanelDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0BE8018CEB1D900CCD286 /* MSTPlugPanelDeck.m */; };
 		2CDD235918CD65C7005ECCA7 /* shadowImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD235818CD65C7005ECCA7 /* shadowImage.png */; };
+		2CF9CBC718D1A19100993B95 /* MSTTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF9CBC618D1A19100993B95 /* MSTTimerViewController.m */; };
+		2CF9CBCA18D1A39C00993B95 /* EFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF9CBC918D1A39C00993B95 /* EFViewController.m */; };
+		2CF9CBD018D1A42400993B95 /* EFCircularSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF9CBCF18D1A42400993B95 /* EFCircularSlider.m */; };
 		2CFD1F8D18CC0FFA00B82078 /* fan-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFD1F8418CC0FFA00B82078 /* fan-128.png */; };
 		2CFD1F8E18CC0FFA00B82078 /* fridge-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFD1F8518CC0FFA00B82078 /* fridge-128.png */; };
 		2CFD1F8F18CC0FFA00B82078 /* greentech-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFD1F8618CC0FFA00B82078 /* greentech-128.png */; };
@@ -137,6 +144,10 @@
 		2C59A4D118C81D6600CFC5C7 /* lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock@2x.png"; sourceTree = "<group>"; };
 		2C59A4D318C81D7500CFC5C7 /* mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@2x.png"; sourceTree = "<group>"; };
 		2C59A4D718C82F5100CFC5C7 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		2C75BC4718D13B4700B08836 /* ProfileController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileController2.h; sourceTree = "<group>"; };
+		2C75BC4818D13B4700B08836 /* ProfileController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileController2.m; sourceTree = "<group>"; };
+		2C75BC4A18D1462900B08836 /* MSTAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTAccount.h; sourceTree = "<group>"; };
+		2C75BC4B18D1462900B08836 /* MSTAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTAccount.m; sourceTree = "<group>"; };
 		2CA6D2BD18C5785E003CDD32 /* MistFlat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MistFlat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA6D2C018C5785E003CDD32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2CA6D2C218C5785E003CDD32 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -199,8 +210,6 @@
 		2CAFFC0518CB781A00CBF8CB /* AddDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDeviceController.h; sourceTree = "<group>"; };
 		2CAFFC0618CB781A00CBF8CB /* AddDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDeviceController.m; sourceTree = "<group>"; };
 		2CAFFC0A18CB7FCC00CBF8CB /* qrcode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qrcode.jpg; sourceTree = "<group>"; };
-		2CB8931A18CDAD0F001A3F78 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
-		2CB8931B18CDAD0F001A3F78 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 		2CB8931D18CDBC5F001A3F78 /* InitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitViewController.h; sourceTree = "<group>"; };
 		2CB8931E18CDBC5F001A3F78 /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitViewController.m; sourceTree = "<group>"; };
 		2CB8932018CDBE55001A3F78 /* wifi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wifi@2x.png"; sourceTree = "<group>"; };
@@ -210,8 +219,20 @@
 		2CB8932518CDC28C001A3F78 /* air.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = air.jpg; sourceTree = "<group>"; };
 		2CB8932A18CDCABA001A3F78 /* iphone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone.jpg; sourceTree = "<group>"; };
 		2CB8932C18CDCB1B001A3F78 /* ipad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ipad.jpg; sourceTree = "<group>"; };
+		2CC0BE7918CEAFEA00CCD286 /* MSTPlugPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTPlugPanel.h; sourceTree = "<group>"; };
+		2CC0BE7A18CEAFEA00CCD286 /* MSTPlugPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTPlugPanel.m; sourceTree = "<group>"; };
+		2CC0BE7C18CEB0B400CCD286 /* MSTPlugSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTPlugSocket.h; sourceTree = "<group>"; };
+		2CC0BE7D18CEB0B400CCD286 /* MSTPlugSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTPlugSocket.m; sourceTree = "<group>"; };
+		2CC0BE7F18CEB1D900CCD286 /* MSTPlugPanelDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTPlugPanelDeck.h; sourceTree = "<group>"; };
+		2CC0BE8018CEB1D900CCD286 /* MSTPlugPanelDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTPlugPanelDeck.m; sourceTree = "<group>"; };
 		2CDD235718CCBDF5005ECCA7 /* Constrains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constrains.h; sourceTree = "<group>"; };
 		2CDD235818CD65C7005ECCA7 /* shadowImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadowImage.png; sourceTree = "<group>"; };
+		2CF9CBC518D1A19100993B95 /* MSTTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTTimerViewController.h; sourceTree = "<group>"; };
+		2CF9CBC618D1A19100993B95 /* MSTTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTTimerViewController.m; sourceTree = "<group>"; };
+		2CF9CBC818D1A39C00993B95 /* EFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFViewController.h; sourceTree = "<group>"; };
+		2CF9CBC918D1A39C00993B95 /* EFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFViewController.m; sourceTree = "<group>"; };
+		2CF9CBCE18D1A42400993B95 /* EFCircularSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFCircularSlider.h; sourceTree = "<group>"; };
+		2CF9CBCF18D1A42400993B95 /* EFCircularSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFCircularSlider.m; sourceTree = "<group>"; };
 		2CFD1F8418CC0FFA00B82078 /* fan-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fan-128.png"; sourceTree = "<group>"; };
 		2CFD1F8518CC0FFA00B82078 /* fridge-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fridge-128.png"; sourceTree = "<group>"; };
 		2CFD1F8618CC0FFA00B82078 /* greentech-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greentech-128.png"; sourceTree = "<group>"; };
@@ -291,13 +312,15 @@
 			name = Feed;
 			sourceTree = "<group>";
 		};
-		2C59A47418C6E91E00CFC5C7 /* Profile */ = {
+		2C59A47418C6E91E00CFC5C7 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				2CB8931A18CDAD0F001A3F78 /* MyTableViewController.h */,
-				2CB8931B18CDAD0F001A3F78 /* MyTableViewController.m */,
+				2CF9CBC818D1A39C00993B95 /* EFViewController.h */,
+				2CF9CBC918D1A39C00993B95 /* EFViewController.m */,
+				2CF9CBC518D1A19100993B95 /* MSTTimerViewController.h */,
+				2CF9CBC618D1A19100993B95 /* MSTTimerViewController.m */,
 			);
-			name = Profile;
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		2C59A47518C6E93D00CFC5C7 /* Startup */ = {
@@ -321,6 +344,8 @@
 		2C59A48018C6ED1A00CFC5C7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				2CF9CBCE18D1A42400993B95 /* EFCircularSlider.h */,
+				2CF9CBCF18D1A42400993B95 /* EFCircularSlider.m */,
 				2C59A48118C6ED2300CFC5C7 /* RCSwitch */,
 			);
 			name = Library;
@@ -352,13 +377,24 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		2C75BC4618D13B4000B08836 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2C75BC4718D13B4700B08836 /* ProfileController2.h */,
+				2C75BC4818D13B4700B08836 /* ProfileController2.m */,
+			);
+			name = Profile;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		2CA6D2B418C5785E003CDD32 = {
 			isa = PBXGroup;
 			children = (
+				2CC0BE8218CEB1E800CCD286 /* Controller */,
 				2C59A48818C6ED6600CFC5C7 /* Utils */,
 				2C59A48018C6ED1A00CFC5C7 /* Library */,
 				2CA6D35518C5AD2F003CDD32 /* Model */,
-				2CA6D2C618C5785E003CDD32 /* MistFlat */,
+				2CA6D2C618C5785E003CDD32 /* View */,
 				2CA6D2E518C5785E003CDD32 /* MistFlatTests */,
 				2CA6D2BF18C5785E003CDD32 /* Frameworks */,
 				2CA6D2BE18C5785E003CDD32 /* Products */,
@@ -388,19 +424,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2CA6D2C618C5785E003CDD32 /* MistFlat */ = {
+		2CA6D2C618C5785E003CDD32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C75BC4618D13B4000B08836 /* Profile */,
 				2C59A47918C6EB1400CFC5C7 /* Setting */,
 				2C59A47118C6E8F500CFC5C7 /* Sidebar */,
 				2C59A47218C6E90200CFC5C7 /* Login */,
 				2C59A47318C6E90F00CFC5C7 /* Feed */,
-				2C59A47418C6E91E00CFC5C7 /* Profile */,
+				2C59A47418C6E91E00CFC5C7 /* Detail */,
 				2C59A47518C6E93D00CFC5C7 /* Startup */,
 				2CA6D2D218C5785E003CDD32 /* Main.storyboard */,
 				2CA6D2D818C5785E003CDD32 /* Images.xcassets */,
 				2CA6D2C718C5785E003CDD32 /* Supporting Files */,
 			);
+			name = View;
 			path = MistFlat;
 			sourceTree = "<group>";
 		};
@@ -490,13 +528,28 @@
 		2CA6D35518C5AD2F003CDD32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2CA6D35618C5B38F003CDD32 /* AuthAPIClient.h */,
-				2CA6D35718C5B38F003CDD32 /* AuthAPIClient.m */,
 				2CA6D35118C5AD27003CDD32 /* CredentialStore.h */,
 				2CA6D35218C5AD27003CDD32 /* CredentialStore.m */,
 				2CDD235718CCBDF5005ECCA7 /* Constrains.h */,
+				2CC0BE7F18CEB1D900CCD286 /* MSTPlugPanelDeck.h */,
+				2CC0BE8018CEB1D900CCD286 /* MSTPlugPanelDeck.m */,
+				2C75BC4A18D1462900B08836 /* MSTAccount.h */,
+				2C75BC4B18D1462900B08836 /* MSTAccount.m */,
+				2CC0BE7918CEAFEA00CCD286 /* MSTPlugPanel.h */,
+				2CC0BE7A18CEAFEA00CCD286 /* MSTPlugPanel.m */,
+				2CC0BE7C18CEB0B400CCD286 /* MSTPlugSocket.h */,
+				2CC0BE7D18CEB0B400CCD286 /* MSTPlugSocket.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		2CC0BE8218CEB1E800CCD286 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2CA6D35618C5B38F003CDD32 /* AuthAPIClient.h */,
+				2CA6D35718C5B38F003CDD32 /* AuthAPIClient.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		2CFD1F8318CC0FFA00B82078 /* ICONs */ = {
@@ -702,25 +755,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CA6D34B18C57C55003CDD32 /* MSTMainViewController.m in Sources */,
+				2CC0BE7E18CEB0B400CCD286 /* MSTPlugSocket.m in Sources */,
 				2C59A49418C6ED6600CFC5C7 /* Utils.m in Sources */,
 				2CA6D35B18C5CE92003CDD32 /* FeedController.m in Sources */,
 				2CAFFC0718CB781A00CBF8CB /* AddDeviceController.m in Sources */,
 				2CA6D2F718C578E6003CDD32 /* BaseLoginController.m in Sources */,
 				2C59A49718C700EF00CFC5C7 /* SighupController.m in Sources */,
 				2C59A49318C6ED6600CFC5C7 /* StoryboardInfo.m in Sources */,
+				2CF9CBD018D1A42400993B95 /* EFCircularSlider.m in Sources */,
+				2C75BC4C18D1462900B08836 /* MSTAccount.m in Sources */,
 				2CA6D2FA18C578FE003CDD32 /* LoginController.m in Sources */,
 				2C59A46318C61C1F00CFC5C7 /* MSTSidePanelViewController.m in Sources */,
 				2CB8931F18CDBC5F001A3F78 /* InitViewController.m in Sources */,
 				2C59A46C18C61EF800CFC5C7 /* SidebarController2.m in Sources */,
 				2CA6D35418C5AD27003CDD32 /* CredentialStore.m in Sources */,
+				2CF9CBCA18D1A39C00993B95 /* EFViewController.m in Sources */,
 				2C59A49218C6ED6600CFC5C7 /* FlatTheme.m in Sources */,
+				2CC0BE7B18CEAFEA00CCD286 /* MSTPlugPanel.m in Sources */,
+				2C75BC4918D13B4700B08836 /* ProfileController2.m in Sources */,
 				2CA6D35E18C5CE9D003CDD32 /* FeedCell.m in Sources */,
+				2CC0BE8118CEB1D900CCD286 /* MSTPlugPanelDeck.m in Sources */,
 				2CA6D2CD18C5785E003CDD32 /* main.m in Sources */,
 				2C59A46F18C61F0900CFC5C7 /* SidebarCell2.m in Sources */,
 				2CA6D35818C5B38F003CDD32 /* AuthAPIClient.m in Sources */,
 				2C59A48618C6ED2300CFC5C7 /* RCSwitch.m in Sources */,
+				2CF9CBC718D1A19100993B95 /* MSTTimerViewController.m in Sources */,
 				2C59A49118C6ED6600CFC5C7 /* ControllerInfo.m in Sources */,
-				2CB8931C18CDAD0F001A3F78 /* MyTableViewController.m in Sources */,
 				2C59A47818C6EB1000CFC5C7 /* SettingsController2.m in Sources */,
 				2C59A48718C6ED2300CFC5C7 /* RCSwitchOnOff.m in Sources */,
 				2CA6D2D118C5785E003CDD32 /* MSTAppDelegate.m in Sources */,

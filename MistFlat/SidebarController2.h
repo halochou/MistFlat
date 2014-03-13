@@ -10,6 +10,7 @@
 
 @interface SidebarController2 : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UITableView* tableView;
 
 @property (nonatomic, weak) IBOutlet UILabel* profileNameLabel;

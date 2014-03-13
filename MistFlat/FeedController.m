@@ -8,154 +8,103 @@
 
 #import "FeedController.h"
 #import "FeedCell.h"
+#import "MSTPlugPanelDeck.h"
+#import "AuthAPIClient.h"
 
 @interface FeedController ()
 
 @property (nonatomic, strong) NSArray* profileImages;
-@property (nonatomic, strong) NSMutableArray* devices;
+@property (nonatomic) id devices;
+@property (strong,nonatomic) UIRefreshControl* refreshControl;
 
 @end
 
 @implementation FeedController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //NSString* boldFontName = @"Avenir-Black";
+    [[AuthAPIClient sharedClient] refreshPlugPanelDeck];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(deviceChanged:)
+                                                 name:@"device-changed"
+                                               object:nil];
     
     [self styleNavigationBar];
     
-    //self.title = @"设备";
-    
     self.feedTableView.dataSource = self;
     self.feedTableView.delegate = self;
-    
-    //self.feedTableView.backgroundColor = [UIColor whiteColor];
-    //self.feedTableView.separatorColor = [UIColor colorWithWhite:0.9 alpha:0.6];
-    
+
     self.profileImages = [NSArray arrayWithObjects:@"tv.jpg", @"router.jpg", @"air.jpg", @"lamp.jpg", @"iphone.jpg", @"ipad.jpg", nil];
-    self.devices = @[@"电视",@"网络",@"空调",@"台灯",@"手机",@"平板电脑"];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
+    //[self.refreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:@"Refreshing"]];
+    [self.feedTableView addSubview:self.refreshControl];
     
 }
 
+- (void)refreshView:(UIRefreshControl *)sender {
+    [sender endRefreshing];
+    NSLog(@"Refreshed.");
+    //and of course reload
+    [self.feedTableView reloadData];
+}
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return [self.devices count];
+}
+    
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    return [self.devices count];
+    return [self.devices[section][@"hubs"] count];
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return self.devices[section][@"name"];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"Refresh");
     
     FeedCell* cell = [tableView dequeueReusableCellWithIdentifier:@"FeedCell"];
+    cell.nameLabel.text = self.devices[indexPath.section][@"hubs"][indexPath.row][@"name"];
     
-    cell.nameLabel.text = self.devices[indexPath.row];
-    //cell.updateLabel.text = @"This is a pic I took while on holiday on Wales. The weather played along nicely which doesn't happen often";
-    
-    //cell.dateLabel.text = @"1 hr ago";
-    //cell.likeCountLabel.text = @"293 likes";
-    if(indexPath.row < 4){
-        cell.commentCountLabel.text = @"Normal";
-    } else {
-        cell.commentCountLabel.text = @"USB";
+    BOOL isOnline = [self.devices[indexPath.section][@"hubs"][indexPath.row][@"online"]boolValue];
+    BOOL isOnwork = [self.devices[indexPath.section][@"hubs"][indexPath.row][@"onwork"]boolValue];
+    //NSLog(@"%@",[isOnline class]);
+    cell.commentCountLabel.text = isOnline ? @"在线" : @"离线";
+    cell.nodeSwitch.on = isOnwork;
+    if (!isOnline) {
+        cell.nodeSwitch.enabled = NO;
     }
-    NSString* profileImageName = self.profileImages[indexPath.row%self.profileImages.count];
+    
+    NSString* profileImageName = self.profileImages[indexPath.row % self.profileImages.count];
     cell.profileImageView.image = [UIImage imageNamed:profileImageName];
-    //NSLog(@"%@",cell);
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 70;
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)styleNavigationBar{
-    
-    /*
-    CGSize size = CGSizeMake(320, 44);
-    UIColor* color = [UIColor whiteColor];
-    
-    UIGraphicsBeginImageContext(size);
-    CGContextRef currentContext = UIGraphicsGetCurrentContext();
-    CGRect fillRect = CGRectMake(0,0,size.width,size.height);
-    CGContextSetFillColorWithColor(currentContext, color.CGColor);
-    CGContextFillRect(currentContext, fillRect);
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    
-    UINavigationBar* navAppearance = [UINavigationBar appearance];
-    
-    [navAppearance setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-    
-    [navAppearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                           [UIColor colorWithRed:28.0/255 green:158.0/255 blue:121.0/255 alpha:1.0f], UITextAttributeTextColor,
-                                           [UIFont fontWithName:navigationTitleFont size:18.0f], UITextAttributeFont, [NSValue valueWithCGSize:CGSizeMake(0.0, 0.0)], UITextAttributeTextShadowOffset,
-                                           nil]];
-    UIImageView* searchView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"search.png"]];
-    searchView.frame = CGRectMake(0, 0, 20, 20);
-    
-    UIBarButtonItem* searchItem = [[UIBarButtonItem alloc] initWithCustomView:searchView];
-    
-    self.navigationItem.rightBarButtonItem = searchItem;
-    
-    
-    UIImageView* menuView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"menu.png"]];
-    menuView.frame = CGRectMake(0, 0, 28, 20);
-    
-    UIBarButtonItem* menuItem = [[UIBarButtonItem alloc] initWithCustomView:menuView];
-    
-    self.navigationItem.leftBarButtonItem = menuItem;*/
-    
-    
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-    //UIColor* mainColor = [UIColor colorWithRed:118.0/255 green:120.0/255 blue:123.0/255 alpha:1.0f];
-
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"shadowImage"] forBarMetrics:UIBarMetricsDefault];
-    //self.navigationItem.leftBarButtonItem.tintColor = mainColor;
-    //self.navigationItem.rightBarButtonItem.tintColor = mainColor;
 }
-
 
 - (void)insertNewObject:(id)sender
 {
     [self performSegueWithIdentifier:@"showAddDeviceView" sender:self];
-    /*
-    if (!self.devices) {
-        self.devices = [[NSMutableArray alloc] init];
-    }
-    NSMutableArray* newDevices = [NSMutableArray arrayWithArray:self.devices];
-    [newDevices addObject:@"hello"];
-    self.devices = newDevices;
-    [self.feedTableView reloadData];
-    //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    //[self.feedTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];*/
 }
-
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
@@ -165,11 +114,17 @@
         [self.devices removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
 
+- (void)refreshContent{
+    [self.feedTableView reloadData];
+}
 
-
+- (void)deviceChanged:(NSNotification *)notification {
+    NSLog(@"Devices Changed.");
+    self.devices = [[MSTPlugPanelDeck sharedClient] plugPanelDeck];
+    [self performSelector:@selector(refreshContent) withObject:nil]; //afterDelay:1.0f];
+}
 
 @end

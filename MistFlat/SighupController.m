@@ -7,10 +7,12 @@
 //
 
 #import "SighupController.h"
+#import "AuthAPIClient.h"
+#import "CredentialStore.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface SighupController ()
-
+@property (nonatomic) CredentialStore *store;
 @end
 
 @implementation SighupController 
@@ -148,7 +150,48 @@
 }
 
 - (IBAction)signupButtonPressed:(id)sender {
+    NSString* username = self.usernameField.text;
+    NSString* password = self.passwordField.text;
+    
+    [[AuthAPIClient sharedClient] signupWithUsername:username
+                                            password:password
+                                            nickname:@"nickname"
+                                          completion:^(id results, NSError *error) {
+                                              if (results) {
+                                                  [[NSNotificationCenter defaultCenter] postNotificationName:@"signup-finished"
+                                                                                                      object:@{@"username":username,
+                                                                                                               @"password":password}];
+                                                  //NSString *authToken = results[@"access_token"];
+                                                  //[self.store setAuthToken:authToken];
+                                                  //NSLog(@"TOKEN: %@",results[@"access_token"]);
+                                                  //[SVProgressHUD dismiss];
+                                                  //[self performSegueWithIdentifier:@"showSidePanelView" sender:self];
+                                                  //[self.tableView reloadData];
+                                              } else {
+                                                  NSLog(@"ERROR: %@", error);
+                                              }
+                                          }
+     ];
+    /*
+    [[AuthAPIClient sharedClient] loginWithUsername:username
+                                           password:password
+                                         completion:^(id results, NSError *error) {
+                                             if (results) {
+                                                 NSString *authToken = results[@"access_token"];
+                                                 [self.store setAuthToken:authToken];
+                                                 NSLog(@"TOKEN: %@",results[@"access_token"]);
+                                                 NSLog(@"%hhd",[self.store isLoggedIn]);
+                                                 //[SVProgressHUD dismiss];
+                                                 //[self performSegueWithIdentifier:@"showSidePanelView" sender:self];
+                                                 //[self.tableView reloadData];
+                                                 [self dismissViewControllerAnimated:YES completion:nil];
+                                             } else {
+                                                 NSLog(@"ERROR: %@", error);
+                                             }
+                                         }
+     ];*/
     [self dismissViewControllerAnimated:YES completion:nil];
+    //
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {

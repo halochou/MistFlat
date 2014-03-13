@@ -11,10 +11,16 @@
 
 @interface AuthAPIClient : AFHTTPSessionManager
 
+@property (nonatomic) id devices;
+
 + (AuthAPIClient *)sharedClient;
 
 //- (void)loginWithUsername:(NSString *)username                Password:(NSString *)password;
 - (NSURLSessionDataTask *)loginWithUsername:(NSString *)username password:(NSString *)password completion:( void (^)(NSArray *results, NSError *error) )completion;
-- (NSURLSessionDataTask *)getProfileContent:( void (^)(NSArray *results, NSError *error) )completion;
+- (NSURLSessionDataTask *)signupWithUsername:(NSString *)username password:(NSString *)password nickname:(NSString*)nickname completion:( void (^)(NSArray *results, NSError *error) )completion;
+- (BOOL)isAccessTokenExpired;
+//- (void)refreshPlugPanelDeckWithCompletion:( void (^)(NSArray *results, NSError *error) )completion;
+- (void)refreshPlugPanelDeck;
+- (void)addPlugPanelItem:pinOfPlugPanel;
 
 @end

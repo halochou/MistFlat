@@ -78,7 +78,7 @@
 }
 
 - (IBAction)confirmButtonPressed:(id)sender {
-    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {

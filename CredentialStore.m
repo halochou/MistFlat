@@ -10,7 +10,7 @@
 #import "SSKeychain.h"
 
 #define SERVICE_NAME @"Mist-Client"
-#define AUTH_TOKEN_KEY @"auth_token"
+#define AUTH_TOKEN_KEY @"access_token"
 
 @implementation CredentialStore
 

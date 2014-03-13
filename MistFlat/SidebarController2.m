@@ -10,6 +10,7 @@
 #import "SidebarCell2.h"
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
+#import "MSTAccount.h"
 #import "CredentialStore.h"
 
 #import "MSTSidePanelViewController.h"
@@ -36,6 +37,8 @@
 {
     [super viewDidLoad];
     
+    self.titleLabel = [[MSTAccount sharedClient]username];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -57,17 +60,17 @@
     
     //NSDictionary* object1 = [NSDictionary dictionaryWithObjects:@[ @"概况", @"0", @"envelope" ] forKeys:@[ @"title", @"count", @"icon" ]];
     NSDictionary* object1 = [NSDictionary dictionaryWithObjects:@[ @"设备", @"4", @"check" ] forKeys:@[ @"title", @"count", @"icon" ]];
-    //NSDictionary* object3 = [NSDictionary dictionaryWithObjects:@[ @"账户", @"0", @"account" ] forKeys:@[ @"title", @"count", @"icon" ]];
-    NSDictionary* object2 = [NSDictionary dictionaryWithObjects:@[ @"设置", @"0", @"settings" ] forKeys:@[ @"title", @"count", @"icon" ]];
-    NSDictionary* object3 = [NSDictionary dictionaryWithObjects:@[ @"注销", @"0", @"arrow" ] forKeys:@[ @"title", @"count", @"icon" ]];
+    NSDictionary* object2 = [NSDictionary dictionaryWithObjects:@[ @"账户", @"0", @"account" ] forKeys:@[ @"title", @"count", @"icon" ]];
+    NSDictionary* object3 = [NSDictionary dictionaryWithObjects:@[ @"设置", @"0", @"settings" ] forKeys:@[ @"title", @"count", @"icon" ]];
+    NSDictionary* object4 = [NSDictionary dictionaryWithObjects:@[ @"注销", @"0", @"arrow" ] forKeys:@[ @"title", @"count", @"icon" ]];
     
-    self.items = @[object1, object2, object3];
+    self.items = @[object1, object2, object3, object4];
 	
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -101,9 +104,12 @@
             self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"feedNavViewController"];
             break;
         case 1:
-            self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"settingNavViewController"];
+            self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
             break;
         case 2:
+            self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"settingNavViewController"];
+            break;
+        case 3:
             [store clearSavedCredentials];
             [self.sidePanelController dismissViewControllerAnimated:YES completion:nil];
             break;

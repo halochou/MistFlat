@@ -7,6 +7,8 @@
 //
 
 #import "AddDeviceController.h"
+#import "AuthAPIClient.h"
+//#import "MSTPlugPanelDeck.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface AddDeviceController ()
@@ -66,14 +68,13 @@
     return NO; // We do not want UITextField to insert line-breaks.
 }
 - (IBAction)confirmButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:@"showInitView" sender:self];
-    //[self dismissViewControllerAnimated:YES completion:nil];
+    [[AuthAPIClient sharedClient]addPlugPanelItem:self.keyField.text];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 - (void)didReceiveMemoryWarning
 {

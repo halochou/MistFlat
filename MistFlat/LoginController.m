@@ -9,12 +9,17 @@
 #import "LoginController.h"
 #import "AuthAPIClient.h"
 #import "CredentialStore.h"
+#import "MSTAccount.h"
 #import "SVProgressHUD.h"
 #import <QuartzCore/QuartzCore.h>
 
 
 @interface LoginController ()
+
 @property (nonatomic) CredentialStore *store;
+@property (nonatomic) NSString *username;
+@property (nonatomic) NSString *password;
+
 @end
 
 @implementation LoginController
@@ -113,32 +118,22 @@
     self.subTitleLabel.text = @"欢迎使用，请登录";
     
     self.store =  [[CredentialStore alloc] init];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(tokenChanged:)
+                                                 name:@"token-changed"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(signupFinished:)
+                                                 name:@"signup-finished"
+                                               object:nil];
 }
 
 - (IBAction)loginButtonPressed:(id)sender
 {
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
-    NSString* username = self.usernameField.text;
-    NSString* password = self.passwordField.text;
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    
-    NSURLSessionDataTask *task = [[AuthAPIClient sharedClient] loginWithUsername:username
-                                                                        password:password
-                                                                      completion:^(id results, NSError *error) {
-                                                                          if (results) {
-                                                                              NSString *authToken = results[@"auth_token"];
-                                                                              [self.store setAuthToken:authToken];
-                                                                              NSLog(@"TOKEN: %@",results[@"auth_token"]);
-                                                                              [SVProgressHUD dismiss];
-                                                                              [self performSegueWithIdentifier:@"showSidePanelView" sender:self];
-                                                                              //[self.tableView reloadData];
-                                                                              
-                                                                          } else {
-                                                                              NSLog(@"ERROR: %@", error);
-                                                                          }
-                                                                      }
-                                  ];
-    
+    self.username = self.usernameField.text;
+    self.password = self.passwordField.text;
+    [self login];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField*)textField;
@@ -170,6 +165,51 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)checkLoginStatus{
+    if([self.store isLoggedIn]){
+        NSLog(@"islogged");
+        //if(![[AuthAPIClient sharedClient] isAccessTokenExpired]){
+        //    NSLog(@"not expired");
+        [self performSegueWithIdentifier:@"showSidePanelView" sender:self];
+        //}
+    }
+}
+
+- (void)login{
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
+    NSURLSessionDataTask *task = [[AuthAPIClient sharedClient] loginWithUsername:self.username
+                                                                        password:self.password
+                                                                      completion:^(id results, NSError *error) {
+                                                                          if (results) {
+                                                                              NSString *authToken = results[@"access_token"];
+                                                                              [self.store setAuthToken:authToken];
+                                                                              NSLog(@"TOKEN: %@",results[@"access_token"]);
+                                                                              [SVProgressHUD dismiss];
+                                                                              [MSTAccount sharedClient].username = self.username;
+                                                                              NSLog(@"USER: %@,%@",[[MSTAccount sharedClient]username],self.username);
+
+                                                                              //[self checkLoginStatus];
+                                                                              //[self.tableView reloadData];
+                                                                              
+                                                                          } else {
+                                                                              NSLog(@"ERROR: %@", error);
+                                                                          }
+                                                                      }
+                                  ];
+}
+
+- (void)signupFinished:(NSNotification *)notification {
+    self.username = [notification object][@"username"];
+    self.password = [notification object][@"password"];
+    NSLog(@"signupFinished.");
+    [self performSelector:@selector(login) withObject:nil afterDelay:0.5f];
+}
+- (void)tokenChanged:(NSNotification *)notification {
+    NSLog(@"checkingStatus");
+    [self performSelector:@selector(checkLoginStatus) withObject:nil afterDelay:0.5f];
 }
 
 @end
