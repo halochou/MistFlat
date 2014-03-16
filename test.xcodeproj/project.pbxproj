@@ -148,21 +148,21 @@
 		2C75BC4818D13B4700B08836 /* ProfileController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileController2.m; sourceTree = "<group>"; };
 		2C75BC4A18D1462900B08836 /* MSTAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTAccount.h; sourceTree = "<group>"; };
 		2C75BC4B18D1462900B08836 /* MSTAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTAccount.m; sourceTree = "<group>"; };
-		2CA6D2BD18C5785E003CDD32 /* MistFlat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MistFlat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CA6D2BD18C5785E003CDD32 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA6D2C018C5785E003CDD32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2CA6D2C218C5785E003CDD32 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2CA6D2C418C5785E003CDD32 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2CA6D2C818C5785E003CDD32 /* MistFlat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MistFlat-Info.plist"; sourceTree = "<group>"; };
+		2CA6D2C818C5785E003CDD32 /* test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "test-Info.plist"; sourceTree = "<group>"; };
 		2CA6D2CA18C5785E003CDD32 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CA6D2CC18C5785E003CDD32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2CA6D2CE18C5785E003CDD32 /* MistFlat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MistFlat-Prefix.pch"; sourceTree = "<group>"; };
+		2CA6D2CE18C5785E003CDD32 /* test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "test-Prefix.pch"; sourceTree = "<group>"; };
 		2CA6D2CF18C5785E003CDD32 /* MSTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSTAppDelegate.h; sourceTree = "<group>"; };
 		2CA6D2D018C5785E003CDD32 /* MSTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTAppDelegate.m; sourceTree = "<group>"; };
 		2CA6D2D318C5785E003CDD32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CA6D2D818C5785E003CDD32 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2CA6D2DE18C5785E003CDD32 /* MistFlatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MistFlatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CA6D2DE18C5785E003CDD32 /* testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA6D2DF18C5785E003CDD32 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2CA6D2E718C5785E003CDD32 /* MistFlatTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MistFlatTests-Info.plist"; sourceTree = "<group>"; };
+		2CA6D2E718C5785E003CDD32 /* testTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "testTests-Info.plist"; sourceTree = "<group>"; };
 		2CA6D2E918C5785E003CDD32 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CA6D2EB18C5785E003CDD32 /* MistFlatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MistFlatTests.m; sourceTree = "<group>"; };
 		2CA6D2F518C578E6003CDD32 /* BaseLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLoginController.h; sourceTree = "<group>"; };
@@ -402,8 +402,8 @@
 		2CA6D2BE18C5785E003CDD32 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CA6D2BD18C5785E003CDD32 /* MistFlat.app */,
-				2CA6D2DE18C5785E003CDD32 /* MistFlatTests.xctest */,
+				2CA6D2BD18C5785E003CDD32 /* test.app */,
+				2CA6D2DE18C5785E003CDD32 /* testTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -443,10 +443,10 @@
 			children = (
 				2CA6D2CF18C5785E003CDD32 /* MSTAppDelegate.h */,
 				2CA6D2D018C5785E003CDD32 /* MSTAppDelegate.m */,
-				2CA6D2C818C5785E003CDD32 /* MistFlat-Info.plist */,
+				2CA6D2C818C5785E003CDD32 /* test-Info.plist */,
 				2CA6D2C918C5785E003CDD32 /* InfoPlist.strings */,
 				2CA6D2CC18C5785E003CDD32 /* main.m */,
-				2CA6D2CE18C5785E003CDD32 /* MistFlat-Prefix.pch */,
+				2CA6D2CE18C5785E003CDD32 /* test-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -463,7 +463,7 @@
 		2CA6D2E618C5785E003CDD32 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2CA6D2E718C5785E003CDD32 /* MistFlatTests-Info.plist */,
+				2CA6D2E718C5785E003CDD32 /* testTests-Info.plist */,
 				2CA6D2E818C5785E003CDD32 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -571,9 +571,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2CA6D2BC18C5785E003CDD32 /* MistFlat */ = {
+		2CA6D2BC18C5785E003CDD32 /* test */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CA6D2EF18C5785E003CDD32 /* Build configuration list for PBXNativeTarget "MistFlat" */;
+			buildConfigurationList = 2CA6D2EF18C5785E003CDD32 /* Build configuration list for PBXNativeTarget "test" */;
 			buildPhases = (
 				747A24C5291C445EA573270E /* Check Pods Manifest.lock */,
 				2CA6D2B918C5785E003CDD32 /* Sources */,
@@ -585,14 +585,14 @@
 			);
 			dependencies = (
 			);
-			name = MistFlat;
+			name = test;
 			productName = MistFlat;
-			productReference = 2CA6D2BD18C5785E003CDD32 /* MistFlat.app */;
+			productReference = 2CA6D2BD18C5785E003CDD32 /* test.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2CA6D2DD18C5785E003CDD32 /* MistFlatTests */ = {
+		2CA6D2DD18C5785E003CDD32 /* testTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CA6D2F218C5785E003CDD32 /* Build configuration list for PBXNativeTarget "MistFlatTests" */;
+			buildConfigurationList = 2CA6D2F218C5785E003CDD32 /* Build configuration list for PBXNativeTarget "testTests" */;
 			buildPhases = (
 				2CA6D2DA18C5785E003CDD32 /* Sources */,
 				2CA6D2DB18C5785E003CDD32 /* Frameworks */,
@@ -603,9 +603,9 @@
 			dependencies = (
 				2CA6D2E418C5785E003CDD32 /* PBXTargetDependency */,
 			);
-			name = MistFlatTests;
+			name = testTests;
 			productName = MistFlatTests;
-			productReference = 2CA6D2DE18C5785E003CDD32 /* MistFlatTests.xctest */;
+			productReference = 2CA6D2DE18C5785E003CDD32 /* testTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -623,7 +623,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2CA6D2B818C5785E003CDD32 /* Build configuration list for PBXProject "MistFlat" */;
+			buildConfigurationList = 2CA6D2B818C5785E003CDD32 /* Build configuration list for PBXProject "test" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -636,8 +636,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2CA6D2BC18C5785E003CDD32 /* MistFlat */,
-				2CA6D2DD18C5785E003CDD32 /* MistFlatTests */,
+				2CA6D2BC18C5785E003CDD32 /* test */,
+				2CA6D2DD18C5785E003CDD32 /* testTests */,
 			);
 		};
 /* End PBXProject section */
@@ -800,7 +800,7 @@
 /* Begin PBXTargetDependency section */
 		2CA6D2E418C5785E003CDD32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2CA6D2BC18C5785E003CDD32 /* MistFlat */;
+			target = 2CA6D2BC18C5785E003CDD32 /* test */;
 			targetProxy = 2CA6D2E318C5785E003CDD32 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -912,9 +912,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MistFlat/MistFlat-Prefix.pch";
-				INFOPLIST_FILE = "MistFlat/MistFlat-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "MistFlat/test-Prefix.pch";
+				INFOPLIST_FILE = "MistFlat/test-Info.plist";
+				PRODUCT_NAME = test;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -926,9 +926,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MistFlat/MistFlat-Prefix.pch";
-				INFOPLIST_FILE = "MistFlat/MistFlat-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "MistFlat/test-Prefix.pch";
+				INFOPLIST_FILE = "MistFlat/test-Info.plist";
+				PRODUCT_NAME = test;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -949,8 +949,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "MistFlatTests/MistFlatTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "MistFlatTests/testTests-Info.plist";
+				PRODUCT_NAME = testTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -968,8 +968,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MistFlat/MistFlat-Prefix.pch";
-				INFOPLIST_FILE = "MistFlatTests/MistFlatTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "MistFlatTests/testTests-Info.plist";
+				PRODUCT_NAME = testTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -978,7 +978,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CA6D2B818C5785E003CDD32 /* Build configuration list for PBXProject "MistFlat" */ = {
+		2CA6D2B818C5785E003CDD32 /* Build configuration list for PBXProject "test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CA6D2ED18C5785E003CDD32 /* Debug */,
@@ -987,7 +987,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CA6D2EF18C5785E003CDD32 /* Build configuration list for PBXNativeTarget "MistFlat" */ = {
+		2CA6D2EF18C5785E003CDD32 /* Build configuration list for PBXNativeTarget "test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CA6D2F018C5785E003CDD32 /* Debug */,
@@ -996,7 +996,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CA6D2F218C5785E003CDD32 /* Build configuration list for PBXNativeTarget "MistFlatTests" */ = {
+		2CA6D2F218C5785E003CDD32 /* Build configuration list for PBXNativeTarget "testTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CA6D2F318C5785E003CDD32 /* Debug */,

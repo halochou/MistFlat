@@ -37,7 +37,7 @@
 {
     [super viewDidLoad];
     
-    self.titleLabel = [[MSTAccount sharedClient]username];
+    self.titleLabel.text = [[MSTAccount sharedClient]username];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
