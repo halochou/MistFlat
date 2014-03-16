@@ -13,6 +13,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    NSLog(@"call application:didFinishLaunchingWithOptions: ");
     return YES;
 }
 							
@@ -42,5 +44,27 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+// Delegation methods
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
+    //const void *devTokenBytes = [devToken bytes];
+    
+    NSString* deviceToken = [[[[devToken description]
+                               stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                              stringByReplacingOccurrencesOfString: @">" withString: @""]
+                             stringByReplacingOccurrencesOfString: @" " withString: @""];
+    
+    NSLog(@"%@",deviceToken);
+    
+    //self.registered = YES;
+    //[self sendProviderDeviceToken:devTokenBytes]; // custom method
+}
 
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    NSLog(@"Error in registration. Error: %@", err);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    NSLog(@"OK");
+    
+}
 @end
