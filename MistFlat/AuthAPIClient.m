@@ -20,7 +20,12 @@
 
 
 @implementation AuthAPIClient
-
+- (NSString *)deviceToken{
+    if (!_deviceToken) {
+        _deviceToken = @"";
+    }
+    return _deviceToken;
+}
 + (AuthAPIClient *)sharedClient {
     static AuthAPIClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
@@ -57,6 +62,7 @@
                   @"username": username,
                   @"password": password,
                   //@"nickname": @"nickname"
+                  @"ios_device_token": self.deviceToken
                   };
     NSURLSessionDataTask *task = [self POST:@"/api/user/login"
                                  parameters:params

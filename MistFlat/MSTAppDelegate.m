@@ -7,13 +7,14 @@
 //
 
 #import "MSTAppDelegate.h"
+#import "AuthAPIClient.h"
 
 @implementation MSTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound| UIRemoteNotificationTypeAlert)];
     NSLog(@"call application:didFinishLaunchingWithOptions: ");
     return YES;
 }
@@ -54,7 +55,7 @@
                              stringByReplacingOccurrencesOfString: @" " withString: @""];
     
     NSLog(@"%@",deviceToken);
-    
+    [AuthAPIClient sharedClient].deviceToken = deviceToken;
     //self.registered = YES;
     //[self sendProviderDeviceToken:devTokenBytes]; // custom method
 }

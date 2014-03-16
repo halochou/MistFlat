@@ -13,6 +13,8 @@
 
 @property (nonatomic) id devices;
 
+@property (strong, nonatomic) NSString * deviceToken;
+
 + (AuthAPIClient *)sharedClient;
 
 //- (void)loginWithUsername:(NSString *)username                Password:(NSString *)password;
@@ -23,4 +25,5 @@
 - (void)refreshPlugPanelDeck;
 - (void)addPlugPanelItem:pinOfPlugPanel;
 - (void)setBoard:(NSString*)boardHandle hub:(NSNumber*)hubId statusIsOn:(BOOL)on ;
+
 @end
