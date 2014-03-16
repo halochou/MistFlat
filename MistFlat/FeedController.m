@@ -44,11 +44,16 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self refreshContent];
+}
+
 - (void)refreshView:(UIRefreshControl *)sender {
     [sender endRefreshing];
     NSLog(@"Refreshed.");
+    [self refreshContent];
     //and of course reload
-    [self.feedTableView reloadData];
+    //[self.feedTableView reloadData];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -72,11 +77,12 @@
     BOOL isOnline = [self.devices[indexPath.section][@"hubs"][indexPath.row][@"online"]boolValue];
     BOOL isOnwork = [self.devices[indexPath.section][@"hubs"][indexPath.row][@"onwork"]boolValue];
     //NSLog(@"%@",[isOnline class]);
-    cell.commentCountLabel.text = isOnline ? @"在线" : @"离线";
+    //cell.commentCountLabel.text = isOnline ? @"在线" : @"离线";
     cell.nodeSwitch.on = isOnwork;
-    if (!isOnline) {
-        cell.nodeSwitch.enabled = NO;
-    }
+    //if (!isOnline) {
+    //    cell.nodeSwitch.enabled = NO;
+    //}
+    [cell.nodeSwitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
     
     NSString* profileImageName = self.profileImages[indexPath.row % self.profileImages.count];
     cell.profileImageView.image = [UIImage imageNamed:profileImageName];
@@ -120,6 +126,24 @@
 - (void)refreshContent{
     [self.feedTableView reloadData];
 }
+
+
+- (void)switchChanged:(id)sender {
+    UISwitch *switchInCell = (UISwitch *)sender;
+    UITableViewCell * cell = (UITableViewCell*) switchInCell.superview.superview.superview;
+    //UITableView * tableview =(UITableView*) cell.superview.superview;
+    NSIndexPath * indexpath = [self.feedTableView indexPathForCell:cell];
+    //NSLog(@"%@",[cell class]);
+    //NSString *strCatID =[[NSString alloc]init];
+    //strCatID = [self.catIDs objectAtIndex:indexpath];
+    NSString* boardId = self.devices[indexpath.section][@"board_handle"];
+    NSNumber* hubId = self.devices[indexpath.section][@"hubs"][indexpath.row][@"hub_id"];
+    NSLog(@"BOARD:%@,HUB:%@",boardId,hubId);
+    
+    
+    [[AuthAPIClient sharedClient] setBoard:boardId hub:hubId statusIsOn:switchInCell.on];
+}
+
 
 - (void)deviceChanged:(NSNotification *)notification {
     NSLog(@"Devices Changed.");

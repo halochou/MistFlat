@@ -22,5 +22,5 @@
 //- (void)refreshPlugPanelDeckWithCompletion:( void (^)(NSArray *results, NSError *error) )completion;
 - (void)refreshPlugPanelDeck;
 - (void)addPlugPanelItem:pinOfPlugPanel;
-
+- (void)setBoard:(NSString*)boardHandle hub:(NSNumber*)hubId statusIsOn:(BOOL)on ;
 @end

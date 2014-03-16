@@ -119,8 +119,8 @@
 		2C59A46218C61C1F00CFC5C7 /* MSTSidePanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTSidePanelViewController.m; sourceTree = "<group>"; };
 		2C59A46918C61EF800CFC5C7 /* SidebarController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarController2.h; sourceTree = "<group>"; };
 		2C59A46A18C61EF800CFC5C7 /* SidebarController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarController2.m; sourceTree = "<group>"; };
-		2C59A46D18C61F0900CFC5C7 /* SidebarCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarCell2.h; sourceTree = "<group>"; };
-		2C59A46E18C61F0900CFC5C7 /* SidebarCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarCell2.m; sourceTree = "<group>"; };
+		2C59A46D18C61F0900CFC5C7 /* SidebarCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SidebarCell2.h; path = MistFlat/SidebarCell2.h; sourceTree = "<group>"; };
+		2C59A46E18C61F0900CFC5C7 /* SidebarCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarCell2.m; path = MistFlat/SidebarCell2.m; sourceTree = "<group>"; };
 		2C59A47618C6EB1000CFC5C7 /* SettingsController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController2.h; sourceTree = "<group>"; };
 		2C59A47718C6EB1000CFC5C7 /* SettingsController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController2.m; sourceTree = "<group>"; };
 		2C59A48218C6ED2300CFC5C7 /* RCSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSwitch.h; sourceTree = "<group>"; };
@@ -205,8 +205,8 @@
 		2CA6D35718C5B38F003CDD32 /* AuthAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthAPIClient.m; path = MistFlat/AuthAPIClient.m; sourceTree = "<group>"; };
 		2CA6D35918C5CE92003CDD32 /* FeedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedController.h; sourceTree = "<group>"; };
 		2CA6D35A18C5CE92003CDD32 /* FeedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedController.m; sourceTree = "<group>"; };
-		2CA6D35C18C5CE9D003CDD32 /* FeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedCell.h; sourceTree = "<group>"; };
-		2CA6D35D18C5CE9D003CDD32 /* FeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCell.m; sourceTree = "<group>"; };
+		2CA6D35C18C5CE9D003CDD32 /* FeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedCell.h; path = MistFlat/FeedCell.h; sourceTree = "<group>"; };
+		2CA6D35D18C5CE9D003CDD32 /* FeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedCell.m; path = MistFlat/FeedCell.m; sourceTree = "<group>"; };
 		2CAFFC0518CB781A00CBF8CB /* AddDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDeviceController.h; sourceTree = "<group>"; };
 		2CAFFC0618CB781A00CBF8CB /* AddDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDeviceController.m; sourceTree = "<group>"; };
 		2CAFFC0A18CB7FCC00CBF8CB /* qrcode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qrcode.jpg; sourceTree = "<group>"; };
@@ -276,8 +276,6 @@
 			children = (
 				2C59A46118C61C1F00CFC5C7 /* MSTSidePanelViewController.h */,
 				2C59A46218C61C1F00CFC5C7 /* MSTSidePanelViewController.m */,
-				2C59A46D18C61F0900CFC5C7 /* SidebarCell2.h */,
-				2C59A46E18C61F0900CFC5C7 /* SidebarCell2.m */,
 				2C59A46918C61EF800CFC5C7 /* SidebarController2.h */,
 				2C59A46A18C61EF800CFC5C7 /* SidebarController2.m */,
 			);
@@ -306,8 +304,6 @@
 			children = (
 				2CA6D35918C5CE92003CDD32 /* FeedController.h */,
 				2CA6D35A18C5CE92003CDD32 /* FeedController.m */,
-				2CA6D35C18C5CE9D003CDD32 /* FeedCell.h */,
-				2CA6D35D18C5CE9D003CDD32 /* FeedCell.m */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -390,11 +386,11 @@
 		2CA6D2B418C5785E003CDD32 = {
 			isa = PBXGroup;
 			children = (
-				2CC0BE8218CEB1E800CCD286 /* Controller */,
+				2CC0BE8218CEB1E800CCD286 /* View */,
 				2C59A48818C6ED6600CFC5C7 /* Utils */,
 				2C59A48018C6ED1A00CFC5C7 /* Library */,
 				2CA6D35518C5AD2F003CDD32 /* Model */,
-				2CA6D2C618C5785E003CDD32 /* View */,
+				2CA6D2C618C5785E003CDD32 /* Controller */,
 				2CA6D2E518C5785E003CDD32 /* MistFlatTests */,
 				2CA6D2BF18C5785E003CDD32 /* Frameworks */,
 				2CA6D2BE18C5785E003CDD32 /* Products */,
@@ -424,7 +420,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2CA6D2C618C5785E003CDD32 /* View */ = {
+		2CA6D2C618C5785E003CDD32 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				2C75BC4618D13B4000B08836 /* Profile */,
@@ -438,7 +434,7 @@
 				2CA6D2D818C5785E003CDD32 /* Images.xcassets */,
 				2CA6D2C718C5785E003CDD32 /* Supporting Files */,
 			);
-			name = View;
+			name = Controller;
 			path = MistFlat;
 			sourceTree = "<group>";
 		};
@@ -528,6 +524,8 @@
 		2CA6D35518C5AD2F003CDD32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2CA6D35618C5B38F003CDD32 /* AuthAPIClient.h */,
+				2CA6D35718C5B38F003CDD32 /* AuthAPIClient.m */,
 				2CA6D35118C5AD27003CDD32 /* CredentialStore.h */,
 				2CA6D35218C5AD27003CDD32 /* CredentialStore.m */,
 				2CDD235718CCBDF5005ECCA7 /* Constrains.h */,
@@ -543,13 +541,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		2CC0BE8218CEB1E800CCD286 /* Controller */ = {
+		2CC0BE8218CEB1E800CCD286 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2CA6D35618C5B38F003CDD32 /* AuthAPIClient.h */,
-				2CA6D35718C5B38F003CDD32 /* AuthAPIClient.m */,
+				2C59A46D18C61F0900CFC5C7 /* SidebarCell2.h */,
+				2C59A46E18C61F0900CFC5C7 /* SidebarCell2.m */,
+				2CA6D35C18C5CE9D003CDD32 /* FeedCell.h */,
+				2CA6D35D18C5CE9D003CDD32 /* FeedCell.m */,
 			);
-			name = Controller;
+			name = View;
 			sourceTree = "<group>";
 		};
 		2CFD1F8318CC0FFA00B82078 /* ICONs */ = {

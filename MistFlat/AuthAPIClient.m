@@ -204,6 +204,33 @@
     //return success;
 }
 
+- (void)setBoard:(NSString*)boardHandle hub:(NSNumber*)hubId statusIsOn:(BOOL)on {
+    __block BOOL success = NO;
+    id params = @{
+                  @"board_handle": boardHandle,
+                  @"hub_id": hubId,
+                  @"work": [NSNumber numberWithBool:on]
+                  };
+    
+    [self POST:@"/api/hub/control_work"
+    parameters:params
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+           if (httpResponse.statusCode == 200) {
+               NSLog(@"Received: %@", responseObject);
+           } else {
+               NSLog(@"Received: %@", responseObject);
+               NSLog(@"Received HTTP %d", httpResponse.statusCode);
+           }
+           
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           NSLog(@"%@",error);
+       }];
+    [self refreshPlugPanelDeck];
+    //return success;
+}
+
+
 - (NSURLSessionDataTask *)getProfileContent:( void (^)(NSArray *results, NSError *error) )completion {
     NSURLSessionDataTask *task = [self GET:@"/home/index.json"
                                 parameters:nil
