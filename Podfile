@@ -3,3 +3,4 @@ pod 'AFNetworking', '~> 2.0'
 pod 'JASidePanels'
 pod "SSKeychain"
 pod 'SVProgressHUD'
+pod 'HMSegmentedControl'

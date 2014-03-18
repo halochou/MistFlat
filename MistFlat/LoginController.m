@@ -187,7 +187,7 @@
                                                                               NSString *authToken = results[@"access_token"];
                                                                               [self.store setAuthToken:authToken];
                                                                               NSLog(@"TOKEN: %@",results[@"access_token"]);
-                                                                              [SVProgressHUD dismiss];
+                                                                              
                                                                               [MSTAccount sharedClient].username = self.username;
                                                                               NSLog(@"USER: %@,%@",[[MSTAccount sharedClient]username],self.username);
 
@@ -210,6 +210,7 @@
 - (void)tokenChanged:(NSNotification *)notification {
     NSLog(@"checkingStatus");
     [self performSelector:@selector(checkLoginStatus) withObject:nil afterDelay:0.5f];
+    [SVProgressHUD dismiss];
 }
 
 @end

@@ -27,6 +27,8 @@
 		2C59A4D818C82F5100CFC5C7 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C59A4D718C82F5100CFC5C7 /* Default-Portrait.png */; };
 		2C75BC4918D13B4700B08836 /* ProfileController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C75BC4818D13B4700B08836 /* ProfileController2.m */; };
 		2C75BC4C18D1462900B08836 /* MSTAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C75BC4B18D1462900B08836 /* MSTAccount.m */; };
+		2CA62C0C18D7F2390047455F /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA62C0B18D7F2390047455F /* HMSegmentedControl.m */; };
+		2CA62C0E18D7FD050047455F /* database.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CA62C0D18D7FD050047455F /* database.plist */; };
 		2CA6D2C118C5785E003CDD32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA6D2C018C5785E003CDD32 /* Foundation.framework */; };
 		2CA6D2C318C5785E003CDD32 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA6D2C218C5785E003CDD32 /* CoreGraphics.framework */; };
 		2CA6D2C518C5785E003CDD32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA6D2C418C5785E003CDD32 /* UIKit.framework */; };
@@ -148,6 +150,9 @@
 		2C75BC4818D13B4700B08836 /* ProfileController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileController2.m; sourceTree = "<group>"; };
 		2C75BC4A18D1462900B08836 /* MSTAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTAccount.h; sourceTree = "<group>"; };
 		2C75BC4B18D1462900B08836 /* MSTAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTAccount.m; sourceTree = "<group>"; };
+		2CA62C0A18D7F2390047455F /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		2CA62C0B18D7F2390047455F /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		2CA62C0D18D7FD050047455F /* database.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = database.plist; sourceTree = "<group>"; };
 		2CA6D2BD18C5785E003CDD32 /* MistFlat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MistFlat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA6D2C018C5785E003CDD32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2CA6D2C218C5785E003CDD32 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -340,6 +345,8 @@
 		2C59A48018C6ED1A00CFC5C7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				2CA62C0A18D7F2390047455F /* HMSegmentedControl.h */,
+				2CA62C0B18D7F2390047455F /* HMSegmentedControl.m */,
 				2CF9CBCE18D1A42400993B95 /* EFCircularSlider.h */,
 				2CF9CBCF18D1A42400993B95 /* EFCircularSlider.m */,
 				2C59A48118C6ED2300CFC5C7 /* RCSwitch */,
@@ -447,6 +454,7 @@
 				2CA6D2C918C5785E003CDD32 /* InfoPlist.strings */,
 				2CA6D2CC18C5785E003CDD32 /* main.m */,
 				2CA6D2CE18C5785E003CDD32 /* MistFlat-Prefix.pch */,
+				2CA62C0D18D7FD050047455F /* database.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -675,6 +683,7 @@
 				2CA6D32A18C57AE7003CDD32 /* arrow.png in Resources */,
 				2CA6D32918C57AE7003CDD32 /* account@2x.png in Resources */,
 				2C59A4D218C81D6600CFC5C7 /* lock@2x.png in Resources */,
+				2CA62C0E18D7FD050047455F /* database.plist in Resources */,
 				2CA6D33F18C57AE7003CDD32 /* profile-1.jpg in Resources */,
 				2CFD1F8D18CC0FFA00B82078 /* fan-128.png in Resources */,
 				2CA6D32E18C57AE7003CDD32 /* check@2x.png in Resources */,
@@ -784,6 +793,7 @@
 				2C59A47818C6EB1000CFC5C7 /* SettingsController2.m in Sources */,
 				2C59A48718C6ED2300CFC5C7 /* RCSwitchOnOff.m in Sources */,
 				2CA6D2D118C5785E003CDD32 /* MSTAppDelegate.m in Sources */,
+				2CA62C0C18D7F2390047455F /* HMSegmentedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

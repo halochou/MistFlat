@@ -15,7 +15,9 @@
 
 @property (nonatomic, strong) NSArray* profileImages;
 @property (nonatomic) id devices;
+@property (nonatomic) id device;
 @property (strong,nonatomic) UIRefreshControl* refreshControl;
+@property (weak, nonatomic) IBOutlet HMSegmentedControl *segmentedControl;
 
 @end
 
@@ -23,12 +25,12 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    [[AuthAPIClient sharedClient] refreshPlugPanelDeck];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(deviceChanged:)
                                                  name:@"device-changed"
                                                object:nil];
+    [[AuthAPIClient sharedClient] refreshPlugPanelDeck];
+    [super viewDidLoad];
     
     [self styleNavigationBar];
     
@@ -42,6 +44,21 @@
     //[self.refreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:@"Refreshing"]];
     [self.feedTableView addSubview:self.refreshControl];
     
+    //////
+    self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
+    //self.segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, 10, 0, 10);
+    
+    self.segmentedControl.backgroundColor = [UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:1];
+    self.segmentedControl.textColor = [UIColor whiteColor];
+    self.segmentedControl.selectedTextColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1];
+    self.segmentedControl.selectionIndicatorColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1];
+    
+    self.segmentedControl.selectionIndicatorHeight = 4.0f;
+    self.segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleBox;
+    self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    ////
+    self.segmentedControl.scrollEnabled = YES;
+    [self.segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -57,25 +74,25 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return [self.devices count];
+    return 1;//[self.device count];
 }
     
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.devices[section][@"hubs"] count];
+    return [self.device/*[section]*/[@"hubs"] count];
 }
-
+/*
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return self.devices[section][@"name"];
-}
+}*/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     FeedCell* cell = [tableView dequeueReusableCellWithIdentifier:@"FeedCell"];
-    cell.nameLabel.text = self.devices[indexPath.section][@"hubs"][indexPath.row][@"name"];
+    cell.nameLabel.text = self.device/*[indexPath.section]*/[@"hubs"][indexPath.row][@"name"];
     
-    BOOL isOnline = [self.devices[indexPath.section][@"hubs"][indexPath.row][@"online"]boolValue];
-    BOOL isOnwork = [self.devices[indexPath.section][@"hubs"][indexPath.row][@"onwork"]boolValue];
+    BOOL isOnline = [self.device/*[indexPath.section]*/[@"hubs"][indexPath.row][@"online"]boolValue];
+    BOOL isOnwork = [self.device/*[indexPath.section]*/[@"hubs"][indexPath.row][@"onwork"]boolValue];
     //NSLog(@"%@",[isOnline class]);
     //cell.commentCountLabel.text = isOnline ? @"在线" : @"离线";
     cell.nodeSwitch.on = isOnwork;
@@ -117,14 +134,26 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.devices removeObjectAtIndex:indexPath.row];
+        [self.device removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
     }
 }
 
 - (void)refreshContent{
+    // Segmented control with scrolling
+    NSMutableArray* sectionNames = [NSMutableArray array];
+    if (self.devices) {
+        for (id board in self.devices) {
+            [sectionNames addObject:board[@"name"]];
+        }
+        [self.segmentedControl setSectionTitles:sectionNames];//, @"Three", @"Four", @"Five", @"Six", @"Seven", @"Eight"]];
+    }
+
+    
     [self.feedTableView reloadData];
+    [self.segmentedControl setNeedsDisplay];
+    //[self viewWillAppear:YES];
 }
 
 
@@ -136,18 +165,27 @@
     //NSLog(@"%@",[cell class]);
     //NSString *strCatID =[[NSString alloc]init];
     //strCatID = [self.catIDs objectAtIndex:indexpath];
-    NSString* boardId = self.devices[indexpath.section][@"board_handle"];
-    NSNumber* hubId = self.devices[indexpath.section][@"hubs"][indexpath.row][@"hub_id"];
+    NSString* boardId = self.device/*[indexpath.section]*/[@"board_handle"];
+    NSNumber* hubId = self.device/*[indexpath.section]*/[@"hubs"][indexpath.row][@"hub_id"];
     NSLog(@"BOARD:%@,HUB:%@",boardId,hubId);
     
     
     [[AuthAPIClient sharedClient] setBoard:boardId hub:hubId statusIsOn:switchInCell.on];
 }
 
+- (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl {
+    self.device = self.devices[segmentedControl.selectedSegmentIndex];
+	NSLog(@"Selected index %li (via UIControlEventValueChanged)", (long)segmentedControl.selectedSegmentIndex);
+    [self.feedTableView reloadData];
+}
 
 - (void)deviceChanged:(NSNotification *)notification {
     NSLog(@"Devices Changed.");
     self.devices = [[MSTPlugPanelDeck sharedClient] plugPanelDeck];
+    if (self.devices) {
+        self.device = self.devices[0];
+    }
+    //self.segmentedControl set
     [self performSelector:@selector(refreshContent) withObject:nil]; //afterDelay:1.0f];
 }
 

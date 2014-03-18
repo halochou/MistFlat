@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HMSegmentedControl.h"
 
 @interface FeedController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

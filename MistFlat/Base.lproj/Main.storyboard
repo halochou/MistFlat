@@ -220,7 +220,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cFC-pA-TDP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="f9u-sF-Aw8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="无线网络名称（SSID）" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TvP-pp-6rK">
@@ -329,18 +329,18 @@
                         <viewControllerLayoutGuide type="bottom" id="2kh-Is-K7c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CxW-TA-8ij">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LLq-VT-wPv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="490"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.82127171754837036" green="0.8179938793182373" blue="0.83033937215805054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedCell" rowHeight="70" id="LWk-FW-AYR" customClass="FeedCell">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="70"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LWk-FW-AYR" id="4LP-lc-lde">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="69"/>
@@ -380,11 +380,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gXM-Fo-Ti2" customClass="HMSegmentedControl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" title="mist" id="5Em-PD-ILW"/>
                     <connections>
                         <outlet property="feedTableView" destination="LLq-VT-wPv" id="scm-Jq-AK8"/>
+                        <outlet property="segmentedControl" destination="gXM-Fo-Ti2" id="BGY-EN-xNq"/>
                         <segue destination="T94-bL-ZgS" kind="push" identifier="showAddDeviceView" id="wuV-xp-3HZ"/>
                     </connections>
                 </viewController>
@@ -511,7 +517,7 @@
             <objects>
                 <navigationController storyboardIdentifier="feedNavViewController" automaticallyAdjustsScrollViewInsets="NO" id="KYh-a2-OYz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UE2-N7-bqT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" backIndicatorImage="shadowImage.png" id="UE2-N7-bqT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -557,7 +563,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Sub-sV-ZCf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Mp9-FW-wwh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345678abcd1234" borderStyle="line" placeholder="密钥" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IDt-YW-8WG">
@@ -768,7 +774,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gj4-oQ-KjU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bwj-Gu-p7c">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqw-Gd-kj4">
@@ -783,7 +789,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mYo-rk-qF3" customClass="EFCircularSlider">
-                                <rect key="frame" x="57" y="93" width="206" height="213"/>
+                                <rect key="frame" x="57" y="93" width="206" height="149"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUh-Kz-aPA">
@@ -813,6 +819,7 @@
     </scenes>
     <resources>
         <image name="qrcode.jpg" width="640" height="400"/>
+        <image name="shadowImage.png" width="640" height="88"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

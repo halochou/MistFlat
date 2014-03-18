@@ -25,7 +25,7 @@
     static AuthAPIClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSURL *baseURL = [NSURL URLWithString:@"http://mistweb.duapp.com"];
+        NSURL *baseURL = [NSURL URLWithString:@""];    //http://mistweb.duapp.com"];
         //NSURL *baseURL = [NSURL URLWithString:@"http://127.0.0.1:9000"];
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         //[config setHTTPAdditionalHeaders:@{ @"User-Agent" : @"TuneStore iOS 1.0"}];
@@ -58,7 +58,7 @@
                   @"password": password,
                   //@"nickname": @"nickname"
                   };
-    NSURLSessionDataTask *task = [self POST:@"/api/user/login"
+    NSURLSessionDataTask *task = [self POST:@"http://mistweb.duapp.com/api/user/login"
                                  parameters:params
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
                                        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
@@ -91,7 +91,7 @@
                   @"password": password,
                   @"nickname": nickname
                   };
-    NSURLSessionDataTask *task = [self POST:@"/api/user/register"
+    NSURLSessionDataTask *task = [self POST:@"http://mistweb.duapp.com/api/user/register"
                                  parameters:params
                                     success:^(NSURLSessionDataTask *task, id responseObject) {
                                         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
@@ -142,7 +142,7 @@
 }
 
 - (void)refreshPlugPanelDeckWithCompletion:( void (^)(NSArray *results, NSError *error) )completion{
-    NSURLSessionDataTask *task = [self POST:@"/api/user/boardall"
+    NSURLSessionDataTask *task = [self POST:@"http://mistweb.duapp.com/api/user/boardall"
                                  parameters:nil
                                     success:^(NSURLSessionDataTask *task, id responseObject) {
                                         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
@@ -168,7 +168,7 @@
 }
 
 - (void)refreshPlugPanelDeck {
-    NSURLSessionDataTask *task = [self GET:@"/api/user/boardall"
+    NSURLSessionDataTask *task = [self GET:@"http://mistweb.duapp.com/api/user/boardall"
                                 parameters:nil
                                    success:^(NSURLSessionDataTask *task, id responseObject){
                                        NSLog(@"refreshPlugPanelDeck");
@@ -186,7 +186,7 @@
                   @"board_pin": pinOfPlugPanel
                   };
 
-    [self POST:@"/api/user/addboard"
+    [self POST:@"http://mistweb.duapp.com/api/user/addboard"
     parameters:params
        success:^(NSURLSessionDataTask *task, id responseObject) {
            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
@@ -212,7 +212,8 @@
                   @"work": [NSNumber numberWithBool:on]
                   };
     
-    [self POST:@"/api/hub/control_work"
+    [self POST:@"http://mistserver.duapp.com/iosapi"
+    //[self POST:@"http://127.0.0.1:18080/iosapi"
     parameters:params
        success:^(NSURLSessionDataTask *task, id responseObject) {
            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
