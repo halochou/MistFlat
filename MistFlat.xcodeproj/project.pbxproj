@@ -25,6 +25,11 @@
 		2C59A4D218C81D6600CFC5C7 /* lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C59A4D118C81D6600CFC5C7 /* lock@2x.png */; };
 		2C59A4D418C81D7500CFC5C7 /* mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C59A4D318C81D7500CFC5C7 /* mail@2x.png */; };
 		2C59A4D818C82F5100CFC5C7 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C59A4D718C82F5100CFC5C7 /* Default-Portrait.png */; };
+		2C5EB30418D94F7600E56DAB /* MSTActionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EB30318D94F7600E56DAB /* MSTActionListViewController.m */; };
+		2C5EB30B18D94FF300E56DAB /* MSTActionCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EB30A18D94FF300E56DAB /* MSTActionCreateViewController.m */; };
+		2C5EB31118D9571D00E56DAB /* SKTogglesControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EB30E18D9571D00E56DAB /* SKTogglesControl.m */; };
+		2C5EB31218D9571D00E56DAB /* SKTogglesThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EB31018D9571D00E56DAB /* SKTogglesThumb.m */; };
+		2C5EB31418D963A700E56DAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5EB31318D963A700E56DAB /* MapKit.framework */; };
 		2C75BC4918D13B4700B08836 /* ProfileController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C75BC4818D13B4700B08836 /* ProfileController2.m */; };
 		2C75BC4C18D1462900B08836 /* MSTAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C75BC4B18D1462900B08836 /* MSTAccount.m */; };
 		2CA62C0C18D7F2390047455F /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA62C0B18D7F2390047455F /* HMSegmentedControl.m */; };
@@ -146,6 +151,15 @@
 		2C59A4D118C81D6600CFC5C7 /* lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock@2x.png"; sourceTree = "<group>"; };
 		2C59A4D318C81D7500CFC5C7 /* mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@2x.png"; sourceTree = "<group>"; };
 		2C59A4D718C82F5100CFC5C7 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		2C5EB30218D94F7600E56DAB /* MSTActionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTActionListViewController.h; sourceTree = "<group>"; };
+		2C5EB30318D94F7600E56DAB /* MSTActionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTActionListViewController.m; sourceTree = "<group>"; };
+		2C5EB30918D94FF300E56DAB /* MSTActionCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTActionCreateViewController.h; sourceTree = "<group>"; };
+		2C5EB30A18D94FF300E56DAB /* MSTActionCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTActionCreateViewController.m; sourceTree = "<group>"; };
+		2C5EB30D18D9571D00E56DAB /* SKTogglesControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTogglesControl.h; sourceTree = "<group>"; };
+		2C5EB30E18D9571D00E56DAB /* SKTogglesControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTogglesControl.m; sourceTree = "<group>"; };
+		2C5EB30F18D9571D00E56DAB /* SKTogglesThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTogglesThumb.h; sourceTree = "<group>"; };
+		2C5EB31018D9571D00E56DAB /* SKTogglesThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTogglesThumb.m; sourceTree = "<group>"; };
+		2C5EB31318D963A700E56DAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2C75BC4718D13B4700B08836 /* ProfileController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileController2.h; sourceTree = "<group>"; };
 		2C75BC4818D13B4700B08836 /* ProfileController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileController2.m; sourceTree = "<group>"; };
 		2C75BC4A18D1462900B08836 /* MSTAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTAccount.h; sourceTree = "<group>"; };
@@ -258,6 +272,7 @@
 			files = (
 				2CA6D2C318C5785E003CDD32 /* CoreGraphics.framework in Frameworks */,
 				2CA6D2C518C5785E003CDD32 /* UIKit.framework in Frameworks */,
+				2C5EB31418D963A700E56DAB /* MapKit.framework in Frameworks */,
 				2CA6D2C118C5785E003CDD32 /* Foundation.framework in Frameworks */,
 				FAF4A2A5B18C469D95C19356 /* libPods.a in Frameworks */,
 			);
@@ -345,6 +360,7 @@
 		2C59A48018C6ED1A00CFC5C7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				2C5EB30C18D9571D00E56DAB /* SKTogglesControl */,
 				2CA62C0A18D7F2390047455F /* HMSegmentedControl.h */,
 				2CA62C0B18D7F2390047455F /* HMSegmentedControl.m */,
 				2CF9CBCE18D1A42400993B95 /* EFCircularSlider.h */,
@@ -378,6 +394,29 @@
 				2C59A49018C6ED6600CFC5C7 /* Utils.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		2C5EB30518D94F7C00E56DAB /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				2C5EB30218D94F7600E56DAB /* MSTActionListViewController.h */,
+				2C5EB30318D94F7600E56DAB /* MSTActionListViewController.m */,
+				2C5EB30918D94FF300E56DAB /* MSTActionCreateViewController.h */,
+				2C5EB30A18D94FF300E56DAB /* MSTActionCreateViewController.m */,
+			);
+			name = Action;
+			sourceTree = "<group>";
+		};
+		2C5EB30C18D9571D00E56DAB /* SKTogglesControl */ = {
+			isa = PBXGroup;
+			children = (
+				2C5EB30D18D9571D00E56DAB /* SKTogglesControl.h */,
+				2C5EB30E18D9571D00E56DAB /* SKTogglesControl.m */,
+				2C5EB30F18D9571D00E56DAB /* SKTogglesThumb.h */,
+				2C5EB31018D9571D00E56DAB /* SKTogglesThumb.m */,
+			);
+			name = SKTogglesControl;
+			path = ../Library/SKTogglesControl/SKTogglesControl;
 			sourceTree = "<group>";
 		};
 		2C75BC4618D13B4000B08836 /* Profile */ = {
@@ -418,6 +457,7 @@
 		2CA6D2BF18C5785E003CDD32 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C5EB31318D963A700E56DAB /* MapKit.framework */,
 				2CA6D2C018C5785E003CDD32 /* Foundation.framework */,
 				2CA6D2C218C5785E003CDD32 /* CoreGraphics.framework */,
 				2CA6D2C418C5785E003CDD32 /* UIKit.framework */,
@@ -430,6 +470,7 @@
 		2CA6D2C618C5785E003CDD32 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2C5EB30518D94F7C00E56DAB /* Action */,
 				2C75BC4618D13B4000B08836 /* Profile */,
 				2C59A47918C6EB1400CFC5C7 /* Setting */,
 				2C59A47118C6E8F500CFC5C7 /* Sidebar */,
@@ -626,6 +667,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Zhou Yang";
 				TargetAttributes = {
+					2CA6D2BC18C5785E003CDD32 = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					2CA6D2DD18C5785E003CDD32 = {
 						TestTargetID = 2CA6D2BC18C5785E003CDD32;
 					};
@@ -768,8 +816,11 @@
 				2C59A49418C6ED6600CFC5C7 /* Utils.m in Sources */,
 				2CA6D35B18C5CE92003CDD32 /* FeedController.m in Sources */,
 				2CAFFC0718CB781A00CBF8CB /* AddDeviceController.m in Sources */,
+				2C5EB30418D94F7600E56DAB /* MSTActionListViewController.m in Sources */,
 				2CA6D2F718C578E6003CDD32 /* BaseLoginController.m in Sources */,
+				2C5EB30B18D94FF300E56DAB /* MSTActionCreateViewController.m in Sources */,
 				2C59A49718C700EF00CFC5C7 /* SighupController.m in Sources */,
+				2C5EB31118D9571D00E56DAB /* SKTogglesControl.m in Sources */,
 				2C59A49318C6ED6600CFC5C7 /* StoryboardInfo.m in Sources */,
 				2CF9CBD018D1A42400993B95 /* EFCircularSlider.m in Sources */,
 				2C75BC4C18D1462900B08836 /* MSTAccount.m in Sources */,
@@ -786,6 +837,7 @@
 				2CC0BE8118CEB1D900CCD286 /* MSTPlugPanelDeck.m in Sources */,
 				2CA6D2CD18C5785E003CDD32 /* main.m in Sources */,
 				2C59A46F18C61F0900CFC5C7 /* SidebarCell2.m in Sources */,
+				2C5EB31218D9571D00E56DAB /* SKTogglesThumb.m in Sources */,
 				2CA6D35818C5B38F003CDD32 /* AuthAPIClient.m in Sources */,
 				2C59A48618C6ED2300CFC5C7 /* RCSwitch.m in Sources */,
 				2CF9CBC718D1A19100993B95 /* MSTTimerViewController.m in Sources */,

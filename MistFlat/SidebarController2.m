@@ -60,7 +60,7 @@
     
     //NSDictionary* object1 = [NSDictionary dictionaryWithObjects:@[ @"概况", @"0", @"envelope" ] forKeys:@[ @"title", @"count", @"icon" ]];
     NSDictionary* object1 = [NSDictionary dictionaryWithObjects:@[ @"设备", @"4", @"check" ] forKeys:@[ @"title", @"count", @"icon" ]];
-    NSDictionary* object2 = [NSDictionary dictionaryWithObjects:@[ @"账户", @"0", @"account" ] forKeys:@[ @"title", @"count", @"icon" ]];
+    NSDictionary* object2 = [NSDictionary dictionaryWithObjects:@[ @"智能行为", @"0", @"account" ] forKeys:@[ @"title", @"count", @"icon" ]];
     NSDictionary* object3 = [NSDictionary dictionaryWithObjects:@[ @"设置", @"0", @"settings" ] forKeys:@[ @"title", @"count", @"icon" ]];
     NSDictionary* object4 = [NSDictionary dictionaryWithObjects:@[ @"注销", @"0", @"arrow" ] forKeys:@[ @"title", @"count", @"icon" ]];
     
@@ -104,7 +104,7 @@
             self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"feedNavViewController"];
             break;
         case 1:
-            self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+            self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"ActionCreateView"];
             break;
         case 2:
             self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"settingNavViewController"];
