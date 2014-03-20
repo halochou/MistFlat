@@ -7,10 +7,6 @@
 //
 
 #import "AuthAPIClient.h"
-#import "CredentialStore.h"
-#import "MSTPlugPanelDeck.h"
-#import "AFHTTPRequestOperationManager.h"
-
 
 @interface AuthAPIClient ()
 
@@ -51,7 +47,7 @@
     return _sharedClient;
 }
 
-
+#pragma mark - login & signup
 - (NSURLSessionDataTask *)loginWithUsername:(NSString *)username password:(NSString *)password completion:( void (^)(NSArray *results, NSError *error) )completion{
     id params = @{
                   @"username": username,
@@ -73,7 +69,7 @@
                                                completion(nil, nil);
                                            });
                                            NSLog(@"Received: %@", responseObject);
-                                           NSLog(@"Received HTTP %d", httpResponse.statusCode);
+                                           NSLog(@"Received HTTP %ld", httpResponse.statusCode);
                                        }
                                        
                                    } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -106,7 +102,7 @@
                                                 completion(nil, nil);
                                             });
                                             NSLog(@"Received: %@", responseObject);
-                                            NSLog(@"Received HTTP %d", httpResponse.statusCode);
+                                            NSLog(@"Received HTTP %ld", httpResponse.statusCode);
                                         }
                                         
                                     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -114,25 +110,11 @@
                                             completion(nil, error);
                                         });
                                     }];
-    /*task = [self loginWithUsername:username
-                          password:password
-                        completion:^(id results, NSError *error) {
-                            if (results) {
-                                NSString *authToken = results[@"access_token"];
-                                [self.store setAuthToken:authToken];
-                                NSLog(@"AutoTOKEN: %@",results[@"access_token"]);
-                                //[SVProgressHUD dismiss];
-                                //[self performSegueWithIdentifier:@"showSidePanelView" sender:self];
-                                //[self.tableView reloadData];
-                                
-                            } else {
-                                NSLog(@"ERROR: %@", error);
-                            }
-                        }];*/
     return task;
     
 }
 
+//Not tested
 - (BOOL)isAccessTokenExpired {
     __block BOOL success = YES;
     [self GET:@"/api/user/detail" parameters:nil
@@ -141,8 +123,21 @@
     return success;
 }
 
+- (void)setAuthTokenHeader {
+    CredentialStore *store = [[CredentialStore alloc] init];
+    NSString *authToken = [store authToken];
+    NSLog(@"Token Stored:%@",authToken);
+    [self.requestSerializer setValue:authToken forHTTPHeaderField:@"access_token"];
+}
+
+- (void)tokenChanged:(NSNotification *)notification {
+    [self setAuthTokenHeader];
+}
+
+#pragma mark plugPanelDeck
+/*
 - (void)refreshPlugPanelDeckWithCompletion:( void (^)(NSArray *results, NSError *error) )completion{
-    NSURLSessionDataTask *task = [self POST:@"http://mistweb.duapp.com/api/user/boardall"
+    [self POST:@"http://mistweb.duapp.com/api/user/boardall"
                                  parameters:nil
                                     success:^(NSURLSessionDataTask *task, id responseObject) {
                                         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
@@ -157,7 +152,7 @@
                                                 completion(nil, nil);
                                             });
                                             NSLog(@"Received: %@", responseObject);
-                                            NSLog(@"Received HTTP %d", httpResponse.statusCode);
+                                            NSLog(@"Received HTTP %ld", httpResponse.statusCode);
                                         }
                                         
                                     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -165,10 +160,10 @@
                                             completion(nil, error);
                                         });
                                     }];
-}
+}*/
 
 - (void)refreshPlugPanelDeck {
-    NSURLSessionDataTask *task = [self GET:@"http://mistweb.duapp.com/api/user/boardall"
+    [self GET:@"http://mistweb.duapp.com/api/user/boardall"
                                 parameters:nil
                                    success:^(NSURLSessionDataTask *task, id responseObject){
                                        NSLog(@"refreshPlugPanelDeck");
@@ -177,11 +172,11 @@
                                    failure:^(NSURLSessionDataTask *task, NSError *error){
                                    }
                                   ];
+    
 }
 
 
 - (void)addPlugPanelItem:(NSString*) pinOfPlugPanel {
-    __block BOOL success = NO;
     id params = @{
                   @"board_pin": pinOfPlugPanel
                   };
@@ -194,7 +189,7 @@
                NSLog(@"Received: %@", responseObject);
            } else {
                NSLog(@"Received: %@", responseObject);
-               NSLog(@"Received HTTP %d", httpResponse.statusCode);
+               NSLog(@"Received HTTP %ld", httpResponse.statusCode);
            }
            
        } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -205,7 +200,6 @@
 }
 
 - (void)setBoard:(NSString*)boardHandle hub:(NSNumber*)hubId statusIsOn:(BOOL)on {
-    __block BOOL success = NO;
     id params = @{
                   @"board_handle": boardHandle,
                   @"hub_id": hubId,
@@ -221,7 +215,7 @@
                NSLog(@"Received: %@", responseObject);
            } else {
                NSLog(@"Received: %@", responseObject);
-               NSLog(@"Received HTTP %d", httpResponse.statusCode);
+               NSLog(@"Received HTTP %ld", httpResponse.statusCode);
            }
            
        } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -231,44 +225,36 @@
     //return success;
 }
 
-
-- (NSURLSessionDataTask *)getProfileContent:( void (^)(NSArray *results, NSError *error) )completion {
-    NSURLSessionDataTask *task = [self GET:@"/home/index.json"
-                                parameters:nil
-                                   success:^(NSURLSessionDataTask *task, id responseObject) {
-                                       [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
-                                       if (httpResponse.statusCode == 200) {
-                                           dispatch_async(dispatch_get_main_queue(), ^{
-                                               completion(responseObject, nil);
-                                           });
-                                       } else {
-                                           dispatch_async(dispatch_get_main_queue(), ^{
-                                               completion(nil, nil);
-                                           });
-                                           NSLog(@"Received: %@", responseObject);
-                                           NSLog(@"Received HTTP %d", httpResponse.statusCode);
-                                       }
-                                       
-                                   } failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                       dispatch_async(dispatch_get_main_queue(), ^{
-                                           completion(nil, error);
-                                       });
-                                   }];
-    return task;
-    
+#pragma mark - actions
+//not tested
+- (void)refreshActions {
+    [self GET:@"http://mistserver.duapp.com/api/getActions"
+   parameters:nil
+      success:^(NSURLSessionDataTask *task, id responseObject){
+          NSLog(@"refreshActions");
+          [[MSTAction sharedClient]setActions:responseObject[@"actions"]];
+      }
+      failure:^(NSURLSessionDataTask *task, NSError *error){
+      }
+     ];
 }
-
-
-- (void)setAuthTokenHeader {
-    CredentialStore *store = [[CredentialStore alloc] init];
-    NSString *authToken = [store authToken];
-    NSLog(@"Token Stored:%@",authToken);
-    [self.requestSerializer setValue:authToken forHTTPHeaderField:@"access_token"];
-}
-
-- (void)tokenChanged:(NSNotification *)notification {
-    [self setAuthTokenHeader];
+//not tested
+- (void)addAction:(NSArray*) actions {
+    NSDictionary* params = @{@"actions": actions};
+    [self POST:@"http://mistserver.duapp.com/api/addAction"
+    parameters:params
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+           if (httpResponse.statusCode == 200) {
+               NSLog(@"Received: %@", responseObject);
+           } else {
+               NSLog(@"Received: %@", responseObject);
+               NSLog(@"Received HTTP %ld", httpResponse.statusCode);
+           }
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           NSLog(@"%@",error);
+       }];
+    [self refreshActions];
 }
 
 @end

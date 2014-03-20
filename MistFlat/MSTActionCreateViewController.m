@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIView *locationView;
 @property (weak, nonatomic) IBOutlet UIView *timerView;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+
 @property (nonatomic) CLLocationManager *locationManager;
 
 @end
@@ -45,6 +47,8 @@
 	redSC.center = CGPointMake(160, 230);
 	[self.timerView addSubview:redSC];
     [self initializeMap];
+    
+    self.navigationController.toolbarHidden = NO;
     // Do any additional setup after loading the view.
 }
 
@@ -114,6 +118,12 @@
 
     return renderer;
 }
+
+- (IBAction)saveNewAction:(id)sender {
+    
+}
+
+
 
 /*
 #pragma mark - Navigation

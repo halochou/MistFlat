@@ -32,6 +32,7 @@
 
 - (void)setPlugPanelDeck:(id)plugPanelDeck{
     _plugPanelDeck = plugPanelDeck;
+
     [[NSNotificationCenter defaultCenter] postNotificationName:@"device-changed" object:self];
     NSLog(@"modelReset:");
 }

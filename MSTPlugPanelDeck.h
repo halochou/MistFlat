@@ -11,7 +11,7 @@
 
 @interface MSTPlugPanelDeck : NSObject
 
-@property (nonatomic) id plugPanelDeck;
+@property (nonatomic) NSArray* plugPanelDeck;
 
 + (MSTPlugPanelDeck *)sharedClient;
 //- (void)addPlugPanel:(MSTPlugPanel*)panel;

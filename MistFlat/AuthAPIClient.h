@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "AFHTTPSessionManager.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "CredentialStore.h"
+#import "MSTPlugPanelDeck.h"
+#import "MSTAction.h"
+
 
 @interface AuthAPIClient : AFHTTPSessionManager
 

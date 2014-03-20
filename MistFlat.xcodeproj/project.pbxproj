@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C07B50A18DA757B0097E205 /* MSTAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C07B50918DA757B0097E205 /* MSTAction.m */; };
 		2C59A46318C61C1F00CFC5C7 /* MSTSidePanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C59A46218C61C1F00CFC5C7 /* MSTSidePanelViewController.m */; };
 		2C59A46C18C61EF800CFC5C7 /* SidebarController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C59A46A18C61EF800CFC5C7 /* SidebarController2.m */; };
 		2C59A46F18C61F0900CFC5C7 /* SidebarCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C59A46E18C61F0900CFC5C7 /* SidebarCell2.m */; };
@@ -30,6 +31,7 @@
 		2C5EB31118D9571D00E56DAB /* SKTogglesControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EB30E18D9571D00E56DAB /* SKTogglesControl.m */; };
 		2C5EB31218D9571D00E56DAB /* SKTogglesThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EB31018D9571D00E56DAB /* SKTogglesThumb.m */; };
 		2C5EB31418D963A700E56DAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5EB31318D963A700E56DAB /* MapKit.framework */; };
+		2C5EB31718D9C1CD00E56DAB /* MSTSelectDeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EB31618D9C1CD00E56DAB /* MSTSelectDeviceTableViewController.m */; };
 		2C75BC4918D13B4700B08836 /* ProfileController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C75BC4818D13B4700B08836 /* ProfileController2.m */; };
 		2C75BC4C18D1462900B08836 /* MSTAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C75BC4B18D1462900B08836 /* MSTAccount.m */; };
 		2CA62C0C18D7F2390047455F /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA62C0B18D7F2390047455F /* HMSegmentedControl.m */; };
@@ -122,6 +124,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C07B50818DA757B0097E205 /* MSTAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTAction.h; sourceTree = "<group>"; };
+		2C07B50918DA757B0097E205 /* MSTAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTAction.m; sourceTree = "<group>"; };
 		2C59A46118C61C1F00CFC5C7 /* MSTSidePanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTSidePanelViewController.h; sourceTree = "<group>"; };
 		2C59A46218C61C1F00CFC5C7 /* MSTSidePanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTSidePanelViewController.m; sourceTree = "<group>"; };
 		2C59A46918C61EF800CFC5C7 /* SidebarController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarController2.h; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 		2C5EB30F18D9571D00E56DAB /* SKTogglesThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTogglesThumb.h; sourceTree = "<group>"; };
 		2C5EB31018D9571D00E56DAB /* SKTogglesThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTogglesThumb.m; sourceTree = "<group>"; };
 		2C5EB31318D963A700E56DAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2C5EB31518D9C1CD00E56DAB /* MSTSelectDeviceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTSelectDeviceTableViewController.h; sourceTree = "<group>"; };
+		2C5EB31618D9C1CD00E56DAB /* MSTSelectDeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTSelectDeviceTableViewController.m; sourceTree = "<group>"; };
 		2C75BC4718D13B4700B08836 /* ProfileController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileController2.h; sourceTree = "<group>"; };
 		2C75BC4818D13B4700B08836 /* ProfileController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileController2.m; sourceTree = "<group>"; };
 		2C75BC4A18D1462900B08836 /* MSTAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTAccount.h; sourceTree = "<group>"; };
@@ -403,6 +409,8 @@
 				2C5EB30318D94F7600E56DAB /* MSTActionListViewController.m */,
 				2C5EB30918D94FF300E56DAB /* MSTActionCreateViewController.h */,
 				2C5EB30A18D94FF300E56DAB /* MSTActionCreateViewController.m */,
+				2C5EB31518D9C1CD00E56DAB /* MSTSelectDeviceTableViewController.h */,
+				2C5EB31618D9C1CD00E56DAB /* MSTSelectDeviceTableViewController.m */,
 			);
 			name = Action;
 			sourceTree = "<group>";
@@ -586,6 +594,8 @@
 				2CC0BE7A18CEAFEA00CCD286 /* MSTPlugPanel.m */,
 				2CC0BE7C18CEB0B400CCD286 /* MSTPlugSocket.h */,
 				2CC0BE7D18CEB0B400CCD286 /* MSTPlugSocket.m */,
+				2C07B50818DA757B0097E205 /* MSTAction.h */,
+				2C07B50918DA757B0097E205 /* MSTAction.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -811,6 +821,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C07B50A18DA757B0097E205 /* MSTAction.m in Sources */,
 				2CA6D34B18C57C55003CDD32 /* MSTMainViewController.m in Sources */,
 				2CC0BE7E18CEB0B400CCD286 /* MSTPlugSocket.m in Sources */,
 				2C59A49418C6ED6600CFC5C7 /* Utils.m in Sources */,
@@ -833,6 +844,7 @@
 				2C59A49218C6ED6600CFC5C7 /* FlatTheme.m in Sources */,
 				2CC0BE7B18CEAFEA00CCD286 /* MSTPlugPanel.m in Sources */,
 				2C75BC4918D13B4700B08836 /* ProfileController2.m in Sources */,
+				2C5EB31718D9C1CD00E56DAB /* MSTSelectDeviceTableViewController.m in Sources */,
 				2CA6D35E18C5CE9D003CDD32 /* FeedCell.m in Sources */,
 				2CC0BE8118CEB1D900CCD286 /* MSTPlugPanelDeck.m in Sources */,
 				2CA6D2CD18C5785E003CDD32 /* main.m in Sources */,
